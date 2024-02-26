@@ -1,1 +1,7 @@
 demo.zip
+target/classes/application.properties
+target/classes/com/example/demo/prueba1/DemoApplication.class
+target/classes/com/example/demo/prueba1/hellospring.class
+target/classes/com/example/demo/prueba1/Student.class
+target/classes/com/example/demo/prueba1/StudentsController.class
+target/test-classes/com/example/demo/prueba1/DemoApplicationTests.class
