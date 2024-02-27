@@ -1,4 +1,4 @@
-package com.example.demo.prueba1;
+package com.example.demo.estudiantes;
 
 import java.time.LocalDate;
 
