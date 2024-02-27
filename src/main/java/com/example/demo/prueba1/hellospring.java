@@ -9,7 +9,5 @@ public class hellospring {
         public String index() {
             return "Greetings from Spring Boot!";
         }
-    
-    
-
 }
+
