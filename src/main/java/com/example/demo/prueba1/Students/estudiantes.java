@@ -14,9 +14,10 @@ import com.example.demo.model.Student;
 @RequestMapping("/estudiantes")
 public class estudiantes {
     public static final String TEMPLATE ="estudiante";
-@GetMapping("/datocompleto")
+@GetMapping("/")
     public String datosComplejos(Model model) {
-        model.addAttribute("persona",new Student(1L, "Fespi", "fforetro@gmai.com", 35, LocalDate.of(1987, Month.APRIL, 16)));
+        model.addAttribute("estudiante",new Student(1L, "Fespi", "fforetro@gmai.com", 35, LocalDate.of(1987, Month.APRIL, 16)));
+        System.out.println(TEMPLATE);
         return TEMPLATE;
     }
     @RequestMapping("/v1")
