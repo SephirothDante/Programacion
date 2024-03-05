@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.demo.model.Student;
 
 @Controller
-@RequestMapping("/estudiantes")
+@RequestMapping("/estudiante")
 public class estudiantes {
     public static final String TEMPLATE ="estudiante";
 @GetMapping("/")

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8" />
@@ -10,8 +11,8 @@
                 <th>Nombre</th>
                 <th>Edad</th>
             </tr>
-        </thead>"
-        <tbody th:each="persona: ${personas}>
+        </thead>
+        <tbody th:each="persona: ${personas}">
             <tr>
                 <td th:text="${persona.nombre}"></td>
                 <td th:text="${persona.edad}"></td>

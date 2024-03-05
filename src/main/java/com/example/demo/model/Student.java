@@ -11,6 +11,7 @@ public class Student {
     
 
     public Student(Long id, String name, String email, Integer age, LocalDate dob) {
+        super();
         this.id = id;
         this.name = name;
         this.email = email;
@@ -57,16 +58,5 @@ public class Student {
 
     public void setDob(LocalDate dob) {
         this.dob = dob;
-    }
-
-    @Override
-    public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", name='" + getName() + "'" +
-            ", email='" + getEmail() + "'" +
-            ", age='" + getAge() + "'" +
-            ", dob='" + getDob() + "'" +
-            "}";
     }
 }

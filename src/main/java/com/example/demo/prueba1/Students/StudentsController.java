@@ -4,23 +4,31 @@ import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.Student;
 
-@RestController
-@RequestMapping("/api/v1/students")
+@Controller
+@RequestMapping("/students")
 public class StudentsController {
-    public static final String TEMPLATE = "estudiantes";
-    @GetMapping()
+    public static final String TEMPLATE = "students";
+    @GetMapping("/")
     public String Estudiantes(Model model){
         model.addAttribute("students", getStudent());
-        System.err.println();
+        System.out.println(model);
         return TEMPLATE;
     }
+    @RequestMapping("/stl")
+        public ModelAndView datosComplejosMAV() {
+            ModelAndView mav = new ModelAndView(TEMPLATE);
+            mav.addObject("students",  getStudent());
+            System.out.println(mav);
+            return mav;
+        }
 
     private List<Student> getStudent() {
         List<Student> students = new ArrayList<>();

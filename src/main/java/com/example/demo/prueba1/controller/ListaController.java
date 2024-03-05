@@ -7,18 +7,27 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.Persona;
 
+
 @Controller
-@RequestMapping("/")
+@RequestMapping("/lista")
 public class ListaController {
-    public static final String TEMPLATE = "personas";
-    @GetMapping("/lista")
-    public String Personas(Model model) {
+    public static final String TEMPLATE ="lista";
+    @GetMapping("/")
+        public String Personas(Model model) {
         model.addAttribute("personas", getPersonas());
+        System.out.println(model);
         return TEMPLATE;
     }
+    @RequestMapping("/listamav")
+        public ModelAndView datosComplejosMAV() {
+            ModelAndView mav = new ModelAndView(TEMPLATE);
+            mav.addObject("persona",  getPersonas());
+            return mav;
+        }
 
     private List<Persona> getPersonas() {
         List<Persona> personas = new ArrayList<>();
