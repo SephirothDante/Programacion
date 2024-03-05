@@ -18,7 +18,8 @@ public class Student {
         this.age = age;
         this.dob = dob;
     }
-    
+    public Student() {
+    }
 
     public Long getId() {
         return this.id;
