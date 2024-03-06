@@ -28,5 +28,5 @@ public class signinstudent {
         mav.addObject("Student", new Student(idt,StudentForm.getName(),StudentForm.getEmail(),StudentForm.getAge(),StudentForm.getDob()));
         return mav;
     }
-
+    
 }
