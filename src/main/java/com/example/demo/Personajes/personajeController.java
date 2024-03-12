@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("v1/personajes")
+@RequestMapping("/v1/personajes")
 public class personajeController {
-@GetMapping
+@GetMapping("/")
 public List<personaje> getPersonaje(){
     return List.of(
         new personaje(1l, "Cloud", 21, "Midgard")
