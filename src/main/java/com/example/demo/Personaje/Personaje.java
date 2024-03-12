@@ -1,6 +1,18 @@
 package com.example.demo.Personaje;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Personaje {
+    @Id
+    @SequenceGenerator(name = "personaje_secuencia", sequenceName = "personaje_secuencia", allocationSize = 1 )
+    @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "personaje_secuencia")
 private Long id;
 private String name;
 private Integer Age;
