@@ -1,5 +1,0 @@
-*************************
-aplicacion de prueba
-        en spring
-        por Fespi
-*************************
