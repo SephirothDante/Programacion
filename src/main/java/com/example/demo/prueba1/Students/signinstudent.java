@@ -26,6 +26,7 @@ public class signinstudent {
         ModelAndView mav = new ModelAndView(RESULT_VIEW);
         this.idt = idt + 1L;
         mav.addObject("Student", new Student(idt,StudentForm.getName(),StudentForm.getEmail(),StudentForm.getAge(),StudentForm.getDob()));
+        mav.addObject("Student", new Student(idt,StudentForm.getName(),StudentForm.getEmail(),StudentForm.getAge(),StudentForm.getDob()));
         return mav;
     }
     

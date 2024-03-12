@@ -16,7 +16,7 @@ public class estudiante {
     @GeneratedValue(generator="ESTUDIANTE")
     @SequenceGenerator(name="ESTUDIANTE", sequenceName="SEQ_ESTUDIANTE")
     @Column(name="ID")
-    private Long id;
+    private int id;
     @Column(name="NAME")
     private String name;
     @Column(name="EMAIL")
@@ -26,7 +26,7 @@ public class estudiante {
     @Column(name="DOB")
     private LocalDate dob;
     
-    public estudiante(Long id, String name, String email, Integer age, LocalDate dob) {
+    public estudiante(int id, String name, String email, Integer age, LocalDate dob) {
         super();
         this.id = id;
         this.name = name;
@@ -34,11 +34,15 @@ public class estudiante {
         this.age = age;
         this.dob = dob;
     }
-    public Long getId() {
+    
+    public estudiante(){
+        
+    }
+    public int getId() {
         return this.id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
