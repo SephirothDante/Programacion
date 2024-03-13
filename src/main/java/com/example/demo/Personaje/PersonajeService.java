@@ -1,9 +1,12 @@
 package com.example.demo.Personaje;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
+
+import jakarta.transaction.Transactional;
 
 @Service
 public class PersonajeService {
@@ -30,4 +33,21 @@ public class PersonajeService {
         }
         personajeRepository.deleteById(personajeId);
     }
+
+    @Transactional
+    public void updatePersonaje(Long personajeId, String name, Integer age, String Bplace){
+        @SuppressWarnings("null")
+        Personaje personaje = personajeRepository.findById(personajeId).orElseThrow(() -> new IllegalStateException(
+            "El personaje con id " + personajeId + "no existe"));
+        if (name!= null && name.length() > 0 && !Objects.equals(personaje.getName(),name)){
+            personaje.setName(name);
+        };
+        if (Bplace!= null && Bplace.length() > 0 && !Objects.equals(personaje.getBplace(),Bplace)){
+            personaje.setBplace(Bplace);
+        };
+        if (age!= null && age.intValue() > 0 && !Objects.equals(personaje.getAge(),age)){
+            personaje.setAge(age);
+        };
+    }
+
 }
