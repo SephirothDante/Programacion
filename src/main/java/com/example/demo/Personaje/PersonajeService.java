@@ -22,4 +22,12 @@ public class PersonajeService {
         personajeRepository.save(personaje);
         System.out.println(personaje);
     }
+    @SuppressWarnings("null")
+    public void deletePersonaje(Long personajeId){
+        boolean exists = personajeRepository.existsById(personajeId);
+        if(!exists){
+            throw new IllegalStateException("El personaje con el Id " + personajeId + " no existe");
+        }
+        personajeRepository.deleteById(personajeId);
+    }
 }
