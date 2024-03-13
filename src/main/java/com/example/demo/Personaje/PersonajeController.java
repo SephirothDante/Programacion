@@ -3,6 +3,8 @@ package com.example.demo.Personaje;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 @RestController
@@ -17,5 +19,11 @@ public class PersonajeController {
     @GetMapping
     public List<Personaje> getPersonajes(){
         return personajeService.getPersonajes();
-}
+    }
+
+    @PostMapping
+    public void registerNewPersonaje(@RequestBody Personaje personaje){
+        personajeService.addNewPersonaje(personaje);
+
+    }
 }
