@@ -11,17 +11,24 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.servlet.ModelAndView;
 @RestController
 @RequestMapping(path = "api/v1/personajes")
 public class PersonajeController {
+    public static final String TEMPLATE ="personajes";
     private final PersonajeService personajeService;
-
+    
     public PersonajeController(PersonajeService personajeService){
         this.personajeService =personajeService;
 
     }
-    @GetMapping
+    @GetMapping("")
+    public ModelAndView ListaPersonajesMAV() {
+        ModelAndView mav = new ModelAndView(TEMPLATE);
+        mav.addObject("personajes", getPersonajes());
+        return mav;
+    }
+
     public List<Personaje> getPersonajes(){
         return personajeService.getPersonajes();
     }

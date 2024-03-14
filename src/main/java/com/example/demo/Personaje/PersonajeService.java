@@ -15,6 +15,7 @@ public class PersonajeService {
         this.personajeRepository = personajeRepository;
     }
     public List<Personaje> getPersonajes(){
+
 	    return personajeRepository.findAll();
 }
     public void addNewPersonaje(Personaje personaje) {
@@ -36,6 +37,7 @@ public class PersonajeService {
 
     @Transactional
     public void updatePersonaje(Long personajeId, String name, Integer age, String Bplace){
+        
         @SuppressWarnings("null")
         Personaje personaje = personajeRepository.findById(personajeId).orElseThrow(() -> new IllegalStateException(
             "El personaje con id " + personajeId + "no existe"));
