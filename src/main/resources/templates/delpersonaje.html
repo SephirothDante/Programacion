@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title> Baja de Personaje</title>
+</head>
+<body>
+    <h1>El siguiente personaje fue eliminado:</h1>
+    <h3>
+        <sapn th:text="${personaje.Id}"></sapn>
+        <span th:text="${personaje.Name}"></span> --
+        <span th:text="${personaje.Age}"></span> --
+        <span th:text="${personaje.Bplace}"></span>
+    </h3>
+    <a href="/"><button>Regresar a Lista de personajes</button></a>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta  charset="UTF-8"/>
+<title>Eliminacion</title>
+</head>
+<body>
+    <h2>Ingresa el ID del personaje a eliminar</h2>
+    <form action="#" th:action="@{addpersonaje}" th:object="${personaje}" method="post" >
+        <p>Id <input type="text" th:field="*{Id}" /></p>
+        <p><input type="submit" value="enviar"  /></p>
+    </form>
+</body>
+</html>

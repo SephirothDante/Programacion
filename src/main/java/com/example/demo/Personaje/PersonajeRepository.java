@@ -11,4 +11,6 @@ public interface PersonajeRepository extends JpaRepository<Personaje,Long > {
     //SELECT *FROM personajes Where name = ?
     @Query("SELEC s FROM Personaje s Where s.name = ?1")
     Optional<Personaje> findPersonajeByName(String name);
+    @Query("SELEC s FROM Personaje_secuencia s Where s.id = ?1")
+    Optional<Personaje> findPersonajeById(Long id);
 }

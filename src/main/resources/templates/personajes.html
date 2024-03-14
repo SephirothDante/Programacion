@@ -2,22 +2,29 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>Lista de Personas</title>
+<title>Lista de Personajes</title>
 </head>
 <body>
     <table>
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Nombre</th>
                 <th>Edad</th>
+                <th>Lugar de Nacimiento</th>
             </tr>
         </thead>
         <tbody th:each="personaje: ${personajes}">
             <tr>
+                <td th:text="${personaje.id}"></td>
                 <td th:text="${personaje.name}"></td>
                 <td th:text="${personaje.age}"></td>
+                <td th:text="${personaje.Bplace}"></td>
             </tr>
         </tbody>
     </table>
+    <table><tr><td><a href="personajes/form"><button>Nuevo Personaje</button></a></td>
+        <td><a href="personajes/dell"><button>Borrar Personaje</button></a></td>
+        <td><button action="#" >Editar Personaje</button></td></tr></table>
 </body>
 </html>
